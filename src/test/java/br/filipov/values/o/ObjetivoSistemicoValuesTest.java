@@ -1,8 +1,8 @@
 package br.filipov.values.o;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import br.filipov.model.EnumHelper;
 
@@ -25,8 +25,6 @@ public class ObjetivoSistemicoValuesTest {
 		assertEquals(ObjetivoSistemicoValues.PRECIFICACAO, EnumHelper.getEnumPorCodigo(4, ObjetivoSistemicoValues.class));
 		assertEquals(ObjetivoSistemicoValues.SIMULACAO, EnumHelper.getEnumPorCodigo(5, ObjetivoSistemicoValues.class));
 	}	
-
-	
 	
 	@Test
 	public void testGetDescricaoByIdShort() {
