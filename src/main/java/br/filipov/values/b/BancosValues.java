@@ -16,17 +16,6 @@ public enum BancosValues {
 		this.descricao = descricao;
 	}
 
-	public static String getDescricaoById(byte id) {
-		String descricao = null;
-		for (BancosValues v : values()) {
-			if (v.getCodigo() == id) {
-				descricao = v.getDescricao();
-				break;
-			}
-		}
-		return descricao;
-	}
-
 	public static String getDescricaoById(short id) {
 		String descricao = null;
 		for (BancosValues v : values()) {
