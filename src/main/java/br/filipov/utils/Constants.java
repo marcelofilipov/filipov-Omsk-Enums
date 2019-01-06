@@ -1,10 +1,14 @@
-package br.filipov.constants;
+package br.filipov.utils;
 
 /**
  * @author Marcelo A. Filipov
  * @since 2014
  */
 public class Constants {
+	
+	private Constants() {
+		throw new IllegalStateException("Utility class");
+	}
 
 	/* Utilizadas em EscolaridadeValues */
 	public static final String ENSINO = "Ensino";

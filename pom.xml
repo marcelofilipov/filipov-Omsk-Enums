@@ -27,9 +27,22 @@
 		<maven-compiler-pluging.version>3.8.0</maven-compiler-pluging.version>
 		<maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
         
-        <jacoco.version>0.7.7.201606060606</jacoco.version>
-		<jacoco.percentage.instruction>0.75</jacoco.percentage.instruction>
-		<jacoco.count.class>5</jacoco.count.class>
+        <jacoco.version>0.7.9</jacoco.version>
+<!--         <jacoco.version>0.7.7.201606060606</jacoco.version> -->
+		<jacoco.percentage.instruction>0.98</jacoco.percentage.instruction>
+		<jacoco.count.class>1</jacoco.count.class>
+
+		<sonar.exclusions>
+			**/model/**,
+        	**/utils/**
+		</sonar.exclusions>
+		<sonar.coverage.exclusions>
+			**/model/**,
+        	**/utils/**
+		</sonar.coverage.exclusions>
+		<sonar.test.exclusions>
+			**/test/*
+		</sonar.test.exclusions>
 		
 		<junit.jupiter.version>5.3.1</junit.jupiter.version>
 	</properties>
@@ -37,10 +50,6 @@
 	<build>
 
 		<finalName>${project.name}-${project.version}</finalName>
-
-<!-- 		<sourceDirectory>src/main/java</sourceDirectory> -->
-
-<!-- 		<testSourceDirectory>src/test/java</testSourceDirectory> -->
 
 		<plugins>
 			<plugin>

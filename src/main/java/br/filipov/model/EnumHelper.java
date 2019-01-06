@@ -11,6 +11,10 @@ import org.slf4j.LoggerFactory;
  *
  */
 public abstract class EnumHelper {
+	
+	private EnumHelper() {
+		throw new IllegalStateException("Utility class");
+	}
 
 	private static Logger log = LoggerFactory.getLogger(EnumHelper.class);
 
