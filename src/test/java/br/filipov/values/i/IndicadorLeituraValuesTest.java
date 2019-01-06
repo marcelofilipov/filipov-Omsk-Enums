@@ -1,6 +1,7 @@
 package br.filipov.values.i;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -19,37 +20,45 @@ public class IndicadorLeituraValuesTest {
 		assertEquals(IndicadorLeituraValues.LIDOS, EnumHelper.getEnumPorCodigo(1, IndicadorLeituraValues.class));
 		assertEquals(IndicadorLeituraValues.PENDENTE_LEITURA, EnumHelper.getEnumPorCodigo(2, IndicadorLeituraValues.class));
 	}	
-
-	
 	
 	@Test
 	public void testGetDescricaoByIdShort() {
-		assertEquals("Lidos",IndicadorLeituraValues.getDescricaoById((short) 1));
-		assertEquals("Pendente de Leitura",IndicadorLeituraValues.getDescricaoById((short) 2));
+		assertEquals("Lidos", IndicadorLeituraValues.getDescricaoById((short) 1));
+		assertEquals("Pendente de Leitura", IndicadorLeituraValues.getDescricaoById((short) 2));
+		
+		assertNotEquals("N/A", IndicadorLeituraValues.getDescricaoById((short) 9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdInteger() {
-		assertEquals("Lidos",IndicadorLeituraValues.getDescricaoById(1));
-		assertEquals("Pendente de Leitura",IndicadorLeituraValues.getDescricaoById(2));
+		assertEquals("Lidos", IndicadorLeituraValues.getDescricaoById(1));
+		assertEquals("Pendente de Leitura", IndicadorLeituraValues.getDescricaoById(2));
+		
+		assertNotEquals("N/A", IndicadorLeituraValues.getDescricaoById(9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdLong() {
-		assertEquals("Lidos",IndicadorLeituraValues.getDescricaoById(1L));
-		assertEquals("Pendente de Leitura",IndicadorLeituraValues.getDescricaoById(2L));
+		assertEquals("Lidos", IndicadorLeituraValues.getDescricaoById(1L));
+		assertEquals("Pendente de Leitura", IndicadorLeituraValues.getDescricaoById(2L));
+		
+		assertNotEquals("N/A", IndicadorLeituraValues.getDescricaoById(9L));
 	}	
 	
 	@Test
 	public void testGetDescricaoByIdByte() {
-		assertEquals("Lidos",IndicadorLeituraValues.getDescricaoById((byte) 1));
-		assertEquals("Pendente de Leitura",IndicadorLeituraValues.getDescricaoById((byte) 2));
+		assertEquals("Lidos", IndicadorLeituraValues.getDescricaoById((byte) 1));
+		assertEquals("Pendente de Leitura", IndicadorLeituraValues.getDescricaoById((byte) 2));
+		
+		assertNotEquals("N/A", IndicadorLeituraValues.getDescricaoById((byte) 9));
 	}
 
 	@Test
 	public void testParse() {
-		assertEquals(IndicadorLeituraValues.LIDOS,IndicadorLeituraValues.parse(1));
-		assertEquals(IndicadorLeituraValues.PENDENTE_LEITURA,IndicadorLeituraValues.parse(2));
+		assertEquals(IndicadorLeituraValues.LIDOS, IndicadorLeituraValues.parse(1));
+		assertEquals(IndicadorLeituraValues.PENDENTE_LEITURA, IndicadorLeituraValues.parse(2));
+		
+		assertNotEquals(IndicadorLeituraValues.LIDOS, IndicadorLeituraValues.parse(9));
 	}
 		
 }

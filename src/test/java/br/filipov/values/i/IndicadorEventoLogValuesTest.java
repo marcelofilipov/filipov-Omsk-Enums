@@ -1,6 +1,7 @@
 package br.filipov.values.i;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -25,53 +26,60 @@ public class IndicadorEventoLogValuesTest {
 		assertEquals(IndicadorEventoLogValues.CONSULTA, EnumHelper.getEnumPorCodigo(4, IndicadorEventoLogValues.class));
 		assertEquals(IndicadorEventoLogValues.LISTA, EnumHelper.getEnumPorCodigo(5, IndicadorEventoLogValues.class));
 	}	
-
-	
 	
 	@Test
 	public void testGetDescricaoByIdShort() {
-		assertEquals("Inclusão",IndicadorEventoLogValues.getDescricaoById((short) 1));
-		assertEquals("Alteração",IndicadorEventoLogValues.getDescricaoById((short) 2));
-		assertEquals("Exclusão",IndicadorEventoLogValues.getDescricaoById((short) 3));
-		assertEquals("Consulta",IndicadorEventoLogValues.getDescricaoById((short) 4));
-		assertEquals("Lista",IndicadorEventoLogValues.getDescricaoById((short) 5));
+		assertEquals("Inclusão", IndicadorEventoLogValues.getDescricaoById((short) 1));
+		assertEquals("Alteração", IndicadorEventoLogValues.getDescricaoById((short) 2));
+		assertEquals("Exclusão", IndicadorEventoLogValues.getDescricaoById((short) 3));
+		assertEquals("Consulta", IndicadorEventoLogValues.getDescricaoById((short) 4));
+		assertEquals("Lista", IndicadorEventoLogValues.getDescricaoById((short) 5));
+		
+		assertNotEquals("N/A", IndicadorEventoLogValues.getDescricaoById((short) 9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdInteger() {
-		assertEquals("Inclusão",IndicadorEventoLogValues.getDescricaoById(1));
-		assertEquals("Alteração",IndicadorEventoLogValues.getDescricaoById(2));
-		assertEquals("Exclusão",IndicadorEventoLogValues.getDescricaoById(3));
-		assertEquals("Consulta",IndicadorEventoLogValues.getDescricaoById(4));
-		assertEquals("Lista",IndicadorEventoLogValues.getDescricaoById(5));
+		assertEquals("Inclusão", IndicadorEventoLogValues.getDescricaoById(1));
+		assertEquals("Alteração", IndicadorEventoLogValues.getDescricaoById(2));
+		assertEquals("Exclusão", IndicadorEventoLogValues.getDescricaoById(3));
+		assertEquals("Consulta", IndicadorEventoLogValues.getDescricaoById(4));
+		assertEquals("Lista", IndicadorEventoLogValues.getDescricaoById(5));
+		
+		assertNotEquals("N/A", IndicadorEventoLogValues.getDescricaoById(9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdLong() {
-		assertEquals("Inclusão",IndicadorEventoLogValues.getDescricaoById(1L));
-		assertEquals("Alteração",IndicadorEventoLogValues.getDescricaoById(2L));
-		assertEquals("Exclusão",IndicadorEventoLogValues.getDescricaoById(3L));
-		assertEquals("Consulta",IndicadorEventoLogValues.getDescricaoById(4L));
-		assertEquals("Lista",IndicadorEventoLogValues.getDescricaoById(5L));
+		assertEquals("Inclusão", IndicadorEventoLogValues.getDescricaoById(1L));
+		assertEquals("Alteração", IndicadorEventoLogValues.getDescricaoById(2L));
+		assertEquals("Exclusão", IndicadorEventoLogValues.getDescricaoById(3L));
+		assertEquals("Consulta", IndicadorEventoLogValues.getDescricaoById(4L));
+		assertEquals("Lista", IndicadorEventoLogValues.getDescricaoById(5L));
+		
+		assertNotEquals("N/A", IndicadorEventoLogValues.getDescricaoById(9L));
 	}	
 	
 	@Test
 	public void testGetDescricaoByIdByte() {
-		assertEquals("Inclusão",IndicadorEventoLogValues.getDescricaoById((byte) 1));
-		assertEquals("Alteração",IndicadorEventoLogValues.getDescricaoById((byte) 2));
-		assertEquals("Exclusão",IndicadorEventoLogValues.getDescricaoById((byte) 3));
-		assertEquals("Consulta",IndicadorEventoLogValues.getDescricaoById((byte) 4));
-		assertEquals("Lista",IndicadorEventoLogValues.getDescricaoById((byte) 5));
+		assertEquals("Inclusão", IndicadorEventoLogValues.getDescricaoById((byte) 1));
+		assertEquals("Alteração", IndicadorEventoLogValues.getDescricaoById((byte) 2));
+		assertEquals("Exclusão", IndicadorEventoLogValues.getDescricaoById((byte) 3));
+		assertEquals("Consulta", IndicadorEventoLogValues.getDescricaoById((byte) 4));
+		assertEquals("Lista", IndicadorEventoLogValues.getDescricaoById((byte) 5));
+		
+		assertNotEquals("N/A", IndicadorEventoLogValues.getDescricaoById((byte) 9));
 	}
 
 	@Test
 	public void testParse() {
-		assertEquals(IndicadorEventoLogValues.INCLUSAO,IndicadorEventoLogValues.parse(1));
-		assertEquals(IndicadorEventoLogValues.ALTERACAO,IndicadorEventoLogValues.parse(2));
-		assertEquals(IndicadorEventoLogValues.EXCLUSAO,IndicadorEventoLogValues.parse(3));
-		assertEquals(IndicadorEventoLogValues.CONSULTA,IndicadorEventoLogValues.parse(4));
-		assertEquals(IndicadorEventoLogValues.LISTA,IndicadorEventoLogValues.parse(5));
+		assertEquals(IndicadorEventoLogValues.INCLUSAO, IndicadorEventoLogValues.parse(1));
+		assertEquals(IndicadorEventoLogValues.ALTERACAO, IndicadorEventoLogValues.parse(2));
+		assertEquals(IndicadorEventoLogValues.EXCLUSAO, IndicadorEventoLogValues.parse(3));
+		assertEquals(IndicadorEventoLogValues.CONSULTA, IndicadorEventoLogValues.parse(4));
+		assertEquals(IndicadorEventoLogValues.LISTA, IndicadorEventoLogValues.parse(5));
+		
+		assertNotEquals(IndicadorEventoLogValues.LISTA, IndicadorEventoLogValues.parse(9));
 	}
-	
-	
+
 }
