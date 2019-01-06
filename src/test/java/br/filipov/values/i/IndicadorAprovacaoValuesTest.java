@@ -1,6 +1,7 @@
 package br.filipov.values.i;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -27,58 +28,65 @@ public class IndicadorAprovacaoValuesTest {
 		assertEquals(IndicadorAprovacaoValues.REJEITADO, EnumHelper.getEnumPorCodigo(5, IndicadorAprovacaoValues.class));
 		assertEquals(IndicadorAprovacaoValues.CANCELADO, EnumHelper.getEnumPorCodigo(6, IndicadorAprovacaoValues.class));
 	}	
-
-	
 	
 	@Test
 	public void testGetDescricaoByIdShort() {
-		assertEquals("Aguardando Aprovação",IndicadorAprovacaoValues.getDescricaoById((short) 1));
-		assertEquals("Pendente",IndicadorAprovacaoValues.getDescricaoById((short) 2));
-		assertEquals("Aprovado",IndicadorAprovacaoValues.getDescricaoById((short) 3));
-		assertEquals("Reprovado",IndicadorAprovacaoValues.getDescricaoById((short) 4));
-		assertEquals("Rejeitado",IndicadorAprovacaoValues.getDescricaoById((short) 5));
-		assertEquals("Cancelado",IndicadorAprovacaoValues.getDescricaoById((short) 6));
+		assertEquals("Aguardando Aprovação", IndicadorAprovacaoValues.getDescricaoById((short) 1));
+		assertEquals("Pendente", IndicadorAprovacaoValues.getDescricaoById((short) 2));
+		assertEquals("Aprovado", IndicadorAprovacaoValues.getDescricaoById((short) 3));
+		assertEquals("Reprovado", IndicadorAprovacaoValues.getDescricaoById((short) 4));
+		assertEquals("Rejeitado", IndicadorAprovacaoValues.getDescricaoById((short) 5));
+		assertEquals("Cancelado", IndicadorAprovacaoValues.getDescricaoById((short) 6));
+		
+		assertNotEquals("N/A", IndicadorAprovacaoValues.getDescricaoById((short) 9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdInteger() {
-		assertEquals("Aguardando Aprovação",IndicadorAprovacaoValues.getDescricaoById(1));
-		assertEquals("Pendente",IndicadorAprovacaoValues.getDescricaoById(2));
-		assertEquals("Aprovado",IndicadorAprovacaoValues.getDescricaoById(3));
-		assertEquals("Reprovado",IndicadorAprovacaoValues.getDescricaoById(4));
-		assertEquals("Rejeitado",IndicadorAprovacaoValues.getDescricaoById(5));
-		assertEquals("Cancelado",IndicadorAprovacaoValues.getDescricaoById(6));
+		assertEquals("Aguardando Aprovação", IndicadorAprovacaoValues.getDescricaoById(1));
+		assertEquals("Pendente", IndicadorAprovacaoValues.getDescricaoById(2));
+		assertEquals("Aprovado", IndicadorAprovacaoValues.getDescricaoById(3));
+		assertEquals("Reprovado", IndicadorAprovacaoValues.getDescricaoById(4));
+		assertEquals("Rejeitado", IndicadorAprovacaoValues.getDescricaoById(5));
+		assertEquals("Cancelado", IndicadorAprovacaoValues.getDescricaoById(6));
+		
+		assertNotEquals("N/A", IndicadorAprovacaoValues.getDescricaoById(9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdLong() {
-		assertEquals("Aguardando Aprovação",IndicadorAprovacaoValues.getDescricaoById(1L));
-		assertEquals("Pendente",IndicadorAprovacaoValues.getDescricaoById(2L));
-		assertEquals("Aprovado",IndicadorAprovacaoValues.getDescricaoById(3L));
-		assertEquals("Reprovado",IndicadorAprovacaoValues.getDescricaoById(4L));
-		assertEquals("Rejeitado",IndicadorAprovacaoValues.getDescricaoById(5L));
-		assertEquals("Cancelado",IndicadorAprovacaoValues.getDescricaoById(6L));
+		assertEquals("Aguardando Aprovação", IndicadorAprovacaoValues.getDescricaoById(1L));
+		assertEquals("Pendente", IndicadorAprovacaoValues.getDescricaoById(2L));
+		assertEquals("Aprovado", IndicadorAprovacaoValues.getDescricaoById(3L));
+		assertEquals("Reprovado", IndicadorAprovacaoValues.getDescricaoById(4L));
+		assertEquals("Rejeitado", IndicadorAprovacaoValues.getDescricaoById(5L));
+		assertEquals("Cancelado", IndicadorAprovacaoValues.getDescricaoById(6L));
+		
+		assertNotEquals("N/A", IndicadorAprovacaoValues.getDescricaoById(9L));
 	}	
 	
 	@Test
 	public void testGetDescricaoByIdByte() {
-		assertEquals("Aguardando Aprovação",IndicadorAprovacaoValues.getDescricaoById((byte) 1));
-		assertEquals("Pendente",IndicadorAprovacaoValues.getDescricaoById((byte) 2));
-		assertEquals("Aprovado",IndicadorAprovacaoValues.getDescricaoById((byte) 3));
-		assertEquals("Reprovado",IndicadorAprovacaoValues.getDescricaoById((byte) 4));
-		assertEquals("Rejeitado",IndicadorAprovacaoValues.getDescricaoById((byte) 5));
-		assertEquals("Cancelado",IndicadorAprovacaoValues.getDescricaoById((byte) 6));
+		assertEquals("Aguardando Aprovação", IndicadorAprovacaoValues.getDescricaoById((byte) 1));
+		assertEquals("Pendente", IndicadorAprovacaoValues.getDescricaoById((byte) 2));
+		assertEquals("Aprovado", IndicadorAprovacaoValues.getDescricaoById((byte) 3));
+		assertEquals("Reprovado", IndicadorAprovacaoValues.getDescricaoById((byte) 4));
+		assertEquals("Rejeitado", IndicadorAprovacaoValues.getDescricaoById((byte) 5));
+		assertEquals("Cancelado", IndicadorAprovacaoValues.getDescricaoById((byte) 6));
+		
+		assertNotEquals("N/A", IndicadorAprovacaoValues.getDescricaoById((byte) 9));
 	}
 
 	@Test
 	public void testParse() {
-		assertEquals(IndicadorAprovacaoValues.AGUARDANDO_APROVACAO,IndicadorAprovacaoValues.parse(1));
-		assertEquals(IndicadorAprovacaoValues.PENDENTE,IndicadorAprovacaoValues.parse(2));
-		assertEquals(IndicadorAprovacaoValues.APROVADO,IndicadorAprovacaoValues.parse(3));
-		assertEquals(IndicadorAprovacaoValues.REPROVADO,IndicadorAprovacaoValues.parse(4));
-		assertEquals(IndicadorAprovacaoValues.REJEITADO,IndicadorAprovacaoValues.parse(5));
-		assertEquals(IndicadorAprovacaoValues.CANCELADO,IndicadorAprovacaoValues.parse(6));
+		assertEquals(IndicadorAprovacaoValues.AGUARDANDO_APROVACAO, IndicadorAprovacaoValues.parse(1));
+		assertEquals(IndicadorAprovacaoValues.PENDENTE, IndicadorAprovacaoValues.parse(2));
+		assertEquals(IndicadorAprovacaoValues.APROVADO, IndicadorAprovacaoValues.parse(3));
+		assertEquals(IndicadorAprovacaoValues.REPROVADO, IndicadorAprovacaoValues.parse(4));
+		assertEquals(IndicadorAprovacaoValues.REJEITADO, IndicadorAprovacaoValues.parse(5));
+		assertEquals(IndicadorAprovacaoValues.CANCELADO, IndicadorAprovacaoValues.parse(6));
+		
+		assertNotEquals(IndicadorAprovacaoValues.CANCELADO, IndicadorAprovacaoValues.parse(9));
 	}
-	
-	
+
 }

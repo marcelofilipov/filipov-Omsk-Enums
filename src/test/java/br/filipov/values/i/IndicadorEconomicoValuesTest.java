@@ -1,6 +1,7 @@
 package br.filipov.values.i;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -27,57 +28,65 @@ public class IndicadorEconomicoValuesTest {
 		assertEquals(IndicadorEconomicoValues.SELIC, EnumHelper.getEnumPorCodigo(5, IndicadorEconomicoValues.class));
 		assertEquals(IndicadorEconomicoValues.TR, EnumHelper.getEnumPorCodigo(6, IndicadorEconomicoValues.class));
 	}	
-
-	
 	
 	@Test
 	public void testGetDescricaoByIdShort() {
-		assertEquals("CDI",IndicadorEconomicoValues.getDescricaoById((short) 1));
-		assertEquals("EUR Pronto",IndicadorEconomicoValues.getDescricaoById((short) 2));
-		assertEquals("EUR Reuters",IndicadorEconomicoValues.getDescricaoById((short) 3));
-		assertEquals("Pré",IndicadorEconomicoValues.getDescricaoById((short) 4));
-		assertEquals("Selic",IndicadorEconomicoValues.getDescricaoById((short) 5));
-		assertEquals("TR",IndicadorEconomicoValues.getDescricaoById((short) 6));
+		assertEquals("CDI", IndicadorEconomicoValues.getDescricaoById((short) 1));
+		assertEquals("EUR Pronto", IndicadorEconomicoValues.getDescricaoById((short) 2));
+		assertEquals("EUR Reuters", IndicadorEconomicoValues.getDescricaoById((short) 3));
+		assertEquals("Pré", IndicadorEconomicoValues.getDescricaoById((short) 4));
+		assertEquals("Selic", IndicadorEconomicoValues.getDescricaoById((short) 5));
+		assertEquals("TR", IndicadorEconomicoValues.getDescricaoById((short) 6));
+		
+		assertNotEquals("N/A", IndicadorEconomicoValues.getDescricaoById((short) 9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdInteger() {
-		assertEquals("CDI",IndicadorEconomicoValues.getDescricaoById(1));
-		assertEquals("EUR Pronto",IndicadorEconomicoValues.getDescricaoById(2));
-		assertEquals("EUR Reuters",IndicadorEconomicoValues.getDescricaoById(3));
-		assertEquals("Pré",IndicadorEconomicoValues.getDescricaoById(4));
-		assertEquals("Selic",IndicadorEconomicoValues.getDescricaoById(5));
-		assertEquals("TR",IndicadorEconomicoValues.getDescricaoById(6));
+		assertEquals("CDI", IndicadorEconomicoValues.getDescricaoById(1));
+		assertEquals("EUR Pronto", IndicadorEconomicoValues.getDescricaoById(2));
+		assertEquals("EUR Reuters", IndicadorEconomicoValues.getDescricaoById(3));
+		assertEquals("Pré", IndicadorEconomicoValues.getDescricaoById(4));
+		assertEquals("Selic", IndicadorEconomicoValues.getDescricaoById(5));
+		assertEquals("TR", IndicadorEconomicoValues.getDescricaoById(6));
+		
+		assertNotEquals("N/A", IndicadorEconomicoValues.getDescricaoById(9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdLong() {
-		assertEquals("CDI",IndicadorEconomicoValues.getDescricaoById(1L));
-		assertEquals("EUR Pronto",IndicadorEconomicoValues.getDescricaoById(2L));
-		assertEquals("EUR Reuters",IndicadorEconomicoValues.getDescricaoById(3L));
-		assertEquals("Pré",IndicadorEconomicoValues.getDescricaoById(4L));
-		assertEquals("Selic",IndicadorEconomicoValues.getDescricaoById(5L));
-		assertEquals("TR",IndicadorEconomicoValues.getDescricaoById(6L));
+		assertEquals("CDI", IndicadorEconomicoValues.getDescricaoById(1L));
+		assertEquals("EUR Pronto", IndicadorEconomicoValues.getDescricaoById(2L));
+		assertEquals("EUR Reuters", IndicadorEconomicoValues.getDescricaoById(3L));
+		assertEquals("Pré", IndicadorEconomicoValues.getDescricaoById(4L));
+		assertEquals("Selic", IndicadorEconomicoValues.getDescricaoById(5L));
+		assertEquals("TR", IndicadorEconomicoValues.getDescricaoById(6L));
+		
+		assertNotEquals("N/A", IndicadorEconomicoValues.getDescricaoById(9L));
 	}	
 	
 	@Test
 	public void testGetDescricaoByIdByte() {
-		assertEquals("CDI",IndicadorEconomicoValues.getDescricaoById((byte) 1));
-		assertEquals("EUR Pronto",IndicadorEconomicoValues.getDescricaoById((byte) 2));
-		assertEquals("EUR Reuters",IndicadorEconomicoValues.getDescricaoById((byte) 3));
-		assertEquals("Pré",IndicadorEconomicoValues.getDescricaoById((byte) 4));
-		assertEquals("Selic",IndicadorEconomicoValues.getDescricaoById((byte) 5));
-		assertEquals("TR",IndicadorEconomicoValues.getDescricaoById((byte) 6));
+		assertEquals("CDI", IndicadorEconomicoValues.getDescricaoById((byte) 1));
+		assertEquals("EUR Pronto", IndicadorEconomicoValues.getDescricaoById((byte) 2));
+		assertEquals("EUR Reuters", IndicadorEconomicoValues.getDescricaoById((byte) 3));
+		assertEquals("Pré", IndicadorEconomicoValues.getDescricaoById((byte) 4));
+		assertEquals("Selic", IndicadorEconomicoValues.getDescricaoById((byte) 5));
+		assertEquals("TR", IndicadorEconomicoValues.getDescricaoById((byte) 6));
+		
+		assertNotEquals("N/A", IndicadorEconomicoValues.getDescricaoById((byte) 9));
 	}
 
 	@Test
 	public void testParse() {
-		assertEquals(IndicadorEconomicoValues.CDI,IndicadorEconomicoValues.parse(1));
-		assertEquals(IndicadorEconomicoValues.EUR_PRONTO,IndicadorEconomicoValues.parse(2));
-		assertEquals(IndicadorEconomicoValues.EUR_REUTERS,IndicadorEconomicoValues.parse(3));
-		assertEquals(IndicadorEconomicoValues.PRE,IndicadorEconomicoValues.parse(4));
-		assertEquals(IndicadorEconomicoValues.SELIC,IndicadorEconomicoValues.parse(5));
-		assertEquals(IndicadorEconomicoValues.TR,IndicadorEconomicoValues.parse(6));
+		assertEquals(IndicadorEconomicoValues.CDI, IndicadorEconomicoValues.parse(1));
+		assertEquals(IndicadorEconomicoValues.EUR_PRONTO, IndicadorEconomicoValues.parse(2));
+		assertEquals(IndicadorEconomicoValues.EUR_REUTERS, IndicadorEconomicoValues.parse(3));
+		assertEquals(IndicadorEconomicoValues.PRE, IndicadorEconomicoValues.parse(4));
+		assertEquals(IndicadorEconomicoValues.SELIC, IndicadorEconomicoValues.parse(5));
+		assertEquals(IndicadorEconomicoValues.TR, IndicadorEconomicoValues.parse(6));
+		
+		assertNotEquals(IndicadorEconomicoValues.TR, IndicadorEconomicoValues.parse(9));
 	}
 	
 }
