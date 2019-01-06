@@ -1,6 +1,7 @@
 package br.filipov.values.v;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -19,37 +20,45 @@ public class VisualizacaoNoticiaMercadoFinanceiroValuesTest {
 		assertEquals(VisualizacaoNoticiaMercadoFinanceiroValues.PAINEL, EnumHelper.getEnumPorCodigo(1, VisualizacaoNoticiaMercadoFinanceiroValues.class));
 		assertEquals(VisualizacaoNoticiaMercadoFinanceiroValues.ALERTA, EnumHelper.getEnumPorCodigo(2, VisualizacaoNoticiaMercadoFinanceiroValues.class));
 	}	
-
-	
 	
 	@Test
 	public void testGetDescricaoByIdShort() {
-		assertEquals("Painel",VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById((short) 1));
-		assertEquals("Alerta",VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById((short) 2));
+		assertEquals("Painel", VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById((short) 1));
+		assertEquals("Alerta", VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById((short) 2));
+		
+		assertNotEquals("N/A", VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById((short) 9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdInteger() {
-		assertEquals("Painel",VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById(1));
-		assertEquals("Alerta",VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById(2));
+		assertEquals("Painel", VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById(1));
+		assertEquals("Alerta", VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById(2));
+		
+		assertNotEquals("N/A", VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById(9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdLong() {
-		assertEquals("Painel",VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById(1L));
-		assertEquals("Alerta",VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById(2L));
+		assertEquals("Painel", VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById(1L));
+		assertEquals("Alerta", VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById(2L));
+		
+		assertNotEquals("N/A", VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById(9L));
 	}	
 	
 	@Test
 	public void testGetDescricaoByIdByte() {
-		assertEquals("Painel",VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById((byte) 1));
-		assertEquals("Alerta",VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById((byte) 2));
+		assertEquals("Painel", VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById((byte) 1));
+		assertEquals("Alerta", VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById((byte) 2));
+		
+		assertNotEquals("N/A", VisualizacaoNoticiaMercadoFinanceiroValues.getDescricaoById((byte) 9));
 	}
 
 	@Test
 	public void testParse() {
-		assertEquals(VisualizacaoNoticiaMercadoFinanceiroValues.PAINEL,VisualizacaoNoticiaMercadoFinanceiroValues.parse(1));
-		assertEquals(VisualizacaoNoticiaMercadoFinanceiroValues.ALERTA,VisualizacaoNoticiaMercadoFinanceiroValues.parse(2));
+		assertEquals(VisualizacaoNoticiaMercadoFinanceiroValues.PAINEL, VisualizacaoNoticiaMercadoFinanceiroValues.parse(1));
+		assertEquals(VisualizacaoNoticiaMercadoFinanceiroValues.ALERTA, VisualizacaoNoticiaMercadoFinanceiroValues.parse(2));
+		
+		assertNotEquals(VisualizacaoNoticiaMercadoFinanceiroValues.ALERTA, VisualizacaoNoticiaMercadoFinanceiroValues.parse(9));
 	}	
 	
 }

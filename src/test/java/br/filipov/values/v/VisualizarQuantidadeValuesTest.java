@@ -1,6 +1,7 @@
 package br.filipov.values.v;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -23,42 +24,50 @@ public class VisualizarQuantidadeValuesTest {
 		assertEquals(VisualizarQuantidadeValues.QUINZE, EnumHelper.getEnumPorCodigo(15, VisualizarQuantidadeValues.class));
 		assertEquals(VisualizarQuantidadeValues.VINTE, EnumHelper.getEnumPorCodigo(20, VisualizarQuantidadeValues.class));
 	}	
-
-	
 	
 	@Test
 	public void testGetDescricaoByIdShort() {
-		assertEquals("5",VisualizarQuantidadeValues.getDescricaoById((short) 5));
-		assertEquals("10",VisualizarQuantidadeValues.getDescricaoById((short) 10));
-		assertEquals("15",VisualizarQuantidadeValues.getDescricaoById((short) 15));
+		assertEquals("5", VisualizarQuantidadeValues.getDescricaoById((short) 5));
+		assertEquals("10", VisualizarQuantidadeValues.getDescricaoById((short) 10));
+		assertEquals("15", VisualizarQuantidadeValues.getDescricaoById((short) 15));
+		
+		assertNotEquals("N/A", VisualizarQuantidadeValues.getDescricaoById((short) 99));
 	}
 
 	@Test
 	public void testGetDescricaoByIdInteger() {
-		assertEquals("5",VisualizarQuantidadeValues.getDescricaoById(5));
-		assertEquals("10",VisualizarQuantidadeValues.getDescricaoById(10));
-		assertEquals("15",VisualizarQuantidadeValues.getDescricaoById(15));
+		assertEquals("5", VisualizarQuantidadeValues.getDescricaoById(5));
+		assertEquals("10", VisualizarQuantidadeValues.getDescricaoById(10));
+		assertEquals("15", VisualizarQuantidadeValues.getDescricaoById(15));
+		
+		assertNotEquals("N/A", VisualizarQuantidadeValues.getDescricaoById(99));
 	}
 
 	@Test
 	public void testGetDescricaoByIdLong() {
-		assertEquals("5",VisualizarQuantidadeValues.getDescricaoById(5L));
-		assertEquals("10",VisualizarQuantidadeValues.getDescricaoById(10L));
-		assertEquals("15",VisualizarQuantidadeValues.getDescricaoById(15L));
+		assertEquals("5", VisualizarQuantidadeValues.getDescricaoById(5L));
+		assertEquals("10", VisualizarQuantidadeValues.getDescricaoById(10L));
+		assertEquals("15", VisualizarQuantidadeValues.getDescricaoById(15L));
+		
+		assertNotEquals("N/A", VisualizarQuantidadeValues.getDescricaoById(99L));
 	}	
 	
 	@Test
 	public void testGetDescricaoByIdByte() {
-		assertEquals("5",VisualizarQuantidadeValues.getDescricaoById((byte) 5));
-		assertEquals("10",VisualizarQuantidadeValues.getDescricaoById((byte) 10));
-		assertEquals("15",VisualizarQuantidadeValues.getDescricaoById((byte) 15));
+		assertEquals("5", VisualizarQuantidadeValues.getDescricaoById((byte) 5));
+		assertEquals("10", VisualizarQuantidadeValues.getDescricaoById((byte) 10));
+		assertEquals("15", VisualizarQuantidadeValues.getDescricaoById((byte) 15));
+		
+		assertNotEquals("N/A", VisualizarQuantidadeValues.getDescricaoById((byte) 99));
 	}
 
 	@Test
 	public void testParse() {
-		assertEquals(VisualizarQuantidadeValues.CINCO,VisualizarQuantidadeValues.parse(5));
-		assertEquals(VisualizarQuantidadeValues.DEZ,VisualizarQuantidadeValues.parse(10));
-		assertEquals(VisualizarQuantidadeValues.QUINZE,VisualizarQuantidadeValues.parse(15));
+		assertEquals(VisualizarQuantidadeValues.CINCO, VisualizarQuantidadeValues.parse(5));
+		assertEquals(VisualizarQuantidadeValues.DEZ, VisualizarQuantidadeValues.parse(10));
+		assertEquals(VisualizarQuantidadeValues.QUINZE, VisualizarQuantidadeValues.parse(15));
+		
+		assertNotEquals(VisualizarQuantidadeValues.QUINZE, VisualizarQuantidadeValues.parse(99));
 	}	
-	
+
 }
