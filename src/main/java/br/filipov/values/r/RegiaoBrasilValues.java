@@ -10,8 +10,7 @@ public enum RegiaoBrasilValues {
 	NORDESTE (2,"Nordeste"),
 	CENTRO_OESTE (3,"Centro-Oeste"),
 	SUDESTE (4,"Sudeste"),
-	SUL (5,"Sul"),
-	INEXISTENTE (9,"Inexistente");
+	SUL (5,"Sul");
 	
 	private Integer codigo;
 	private String descricao;

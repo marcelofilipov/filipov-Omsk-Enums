@@ -1,6 +1,7 @@
 package br.filipov.values.r;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +16,6 @@ public class RegiaoBrasilValuesTest {
 		assertEquals("Centro-Oeste", EnumHelper.getDescricaoPorCodigo(RegiaoBrasilValues.class, 3));
 		assertEquals("Sudeste", EnumHelper.getDescricaoPorCodigo(RegiaoBrasilValues.class, 4));
 		assertEquals("Sul", EnumHelper.getDescricaoPorCodigo(RegiaoBrasilValues.class, 5));
-		assertEquals("Inexistente", EnumHelper.getDescricaoPorCodigo(RegiaoBrasilValues.class, 9));
 	}
 
 	@Test
@@ -25,10 +25,7 @@ public class RegiaoBrasilValuesTest {
 		assertEquals(RegiaoBrasilValues.CENTRO_OESTE, EnumHelper.getEnumPorCodigo(3, RegiaoBrasilValues.class));
 		assertEquals(RegiaoBrasilValues.SUDESTE, EnumHelper.getEnumPorCodigo(4, RegiaoBrasilValues.class));
 		assertEquals(RegiaoBrasilValues.SUL, EnumHelper.getEnumPorCodigo(5, RegiaoBrasilValues.class));
-		assertEquals(RegiaoBrasilValues.INEXISTENTE, EnumHelper.getEnumPorCodigo(9, RegiaoBrasilValues.class));
 	}	
-
-
 	
 	@Test
 	public void testGetDescricaoByIdShort() {
@@ -37,7 +34,8 @@ public class RegiaoBrasilValuesTest {
 		assertEquals("Centro-Oeste",RegiaoBrasilValues.getDescricaoById((short) 3));
 		assertEquals("Sudeste",RegiaoBrasilValues.getDescricaoById((short) 4));
 		assertEquals("Sul",RegiaoBrasilValues.getDescricaoById((short) 5));
-		assertEquals("Inexistente",RegiaoBrasilValues.getDescricaoById((short) 9));
+
+		assertNotEquals("N/A",RegiaoBrasilValues.getDescricaoById((short) 9));
 	}
 
 	@Test
@@ -47,7 +45,8 @@ public class RegiaoBrasilValuesTest {
 		assertEquals("Centro-Oeste",RegiaoBrasilValues.getDescricaoById((byte) 3));
 		assertEquals("Sudeste",RegiaoBrasilValues.getDescricaoById((byte) 4));
 		assertEquals("Sul",RegiaoBrasilValues.getDescricaoById((byte) 5));
-		assertEquals("Inexistente",RegiaoBrasilValues.getDescricaoById((byte) 9));
+		
+		assertNotEquals("N/A",RegiaoBrasilValues.getDescricaoById((byte) 9));
 	}
 
 	@Test
@@ -57,7 +56,8 @@ public class RegiaoBrasilValuesTest {
 		assertEquals("Centro-Oeste",RegiaoBrasilValues.getDescricaoById(3));
 		assertEquals("Sudeste",RegiaoBrasilValues.getDescricaoById(4));
 		assertEquals("Sul",RegiaoBrasilValues.getDescricaoById(5));
-		assertEquals("Inexistente",RegiaoBrasilValues.getDescricaoById(9));
+		
+		assertNotEquals("N/A",RegiaoBrasilValues.getDescricaoById(9));
 	}
 	
 	@Test
@@ -67,7 +67,8 @@ public class RegiaoBrasilValuesTest {
 		assertEquals("Centro-Oeste",RegiaoBrasilValues.getDescricaoById(3L));
 		assertEquals("Sudeste",RegiaoBrasilValues.getDescricaoById(4L));
 		assertEquals("Sul",RegiaoBrasilValues.getDescricaoById(5L));
-		assertEquals("Inexistente",RegiaoBrasilValues.getDescricaoById(9L));
+		
+		assertNotEquals("N/A",RegiaoBrasilValues.getDescricaoById(9L));
 	}	
 	
 	@Test
@@ -77,7 +78,8 @@ public class RegiaoBrasilValuesTest {
 		assertEquals(RegiaoBrasilValues.CENTRO_OESTE,RegiaoBrasilValues.parse(3));
 		assertEquals(RegiaoBrasilValues.SUDESTE,RegiaoBrasilValues.parse(4));
 		assertEquals(RegiaoBrasilValues.SUL,RegiaoBrasilValues.parse(5));
-		assertEquals(RegiaoBrasilValues.INEXISTENTE,RegiaoBrasilValues.parse(9));
+		
+		assertNotEquals(RegiaoBrasilValues.SUL,RegiaoBrasilValues.parse(9));
 	}	
-	
+
 }
