@@ -1,6 +1,6 @@
 package br.filipov.values.t;
 
-import br.filipov.constants.Constants;
+import br.filipov.utils.Constants;
 
 /**
  * @author Marcelo A. Filipov

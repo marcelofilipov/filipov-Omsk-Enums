@@ -1,6 +1,7 @@
 package br.filipov.values.n;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -32,42 +33,50 @@ public class NacionalidadeValuesTest {
 	
 	@Test
 	public void testGetDescricaoByIdShort() {
-		assertEquals("Brasileiro",NacionalidadeValues.getDescricaoById((short) 1));
-		assertEquals("Estrangeiro com Visto Permanente",NacionalidadeValues.getDescricaoById((short) 2));
-		assertEquals("Estrangeiro com Visto Temporário",NacionalidadeValues.getDescricaoById((short) 3));
-		assertEquals("Naturalizado",NacionalidadeValues.getDescricaoById((short) 4));
-		assertEquals("Português com Residência Permanente",NacionalidadeValues.getDescricaoById((short) 5));
-		assertEquals("Estrangeiro com Domicílio no Exterior",NacionalidadeValues.getDescricaoById((short) 6));
+		assertEquals("Brasileiro", NacionalidadeValues.getDescricaoById((short) 1));
+		assertEquals("Estrangeiro com Visto Permanente", NacionalidadeValues.getDescricaoById((short) 2));
+		assertEquals("Estrangeiro com Visto Temporário", NacionalidadeValues.getDescricaoById((short) 3));
+		assertEquals("Naturalizado", NacionalidadeValues.getDescricaoById((short) 4));
+		assertEquals("Português com Residência Permanente", NacionalidadeValues.getDescricaoById((short) 5));
+		assertEquals("Estrangeiro com Domicílio no Exterior", NacionalidadeValues.getDescricaoById((short) 6));
+		
+		assertNotEquals("N/A", NacionalidadeValues.getDescricaoById((short) 9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdInteger() {
-		assertEquals("Brasileiro",NacionalidadeValues.getDescricaoById(1));
-		assertEquals("Estrangeiro com Visto Permanente",NacionalidadeValues.getDescricaoById(2));
-		assertEquals("Estrangeiro com Visto Temporário",NacionalidadeValues.getDescricaoById(3));
-		assertEquals("Naturalizado",NacionalidadeValues.getDescricaoById(4));
-		assertEquals("Português com Residência Permanente",NacionalidadeValues.getDescricaoById(5));
-		assertEquals("Estrangeiro com Domicílio no Exterior",NacionalidadeValues.getDescricaoById(6));
+		assertEquals("Brasileiro", NacionalidadeValues.getDescricaoById(1));
+		assertEquals("Estrangeiro com Visto Permanente", NacionalidadeValues.getDescricaoById(2));
+		assertEquals("Estrangeiro com Visto Temporário", NacionalidadeValues.getDescricaoById(3));
+		assertEquals("Naturalizado", NacionalidadeValues.getDescricaoById(4));
+		assertEquals("Português com Residência Permanente", NacionalidadeValues.getDescricaoById(5));
+		assertEquals("Estrangeiro com Domicílio no Exterior", NacionalidadeValues.getDescricaoById(6));
+		
+		assertNotEquals("N/A", NacionalidadeValues.getDescricaoById(9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdLong() {
-		assertEquals("Brasileiro",NacionalidadeValues.getDescricaoById(1L));
-		assertEquals("Estrangeiro com Visto Permanente",NacionalidadeValues.getDescricaoById(2L));
-		assertEquals("Estrangeiro com Visto Temporário",NacionalidadeValues.getDescricaoById(3L));
-		assertEquals("Naturalizado",NacionalidadeValues.getDescricaoById(4L));
-		assertEquals("Português com Residência Permanente",NacionalidadeValues.getDescricaoById(5L));
-		assertEquals("Estrangeiro com Domicílio no Exterior",NacionalidadeValues.getDescricaoById(6L));
+		assertEquals("Brasileiro", NacionalidadeValues.getDescricaoById(1L));
+		assertEquals("Estrangeiro com Visto Permanente", NacionalidadeValues.getDescricaoById(2L));
+		assertEquals("Estrangeiro com Visto Temporário", NacionalidadeValues.getDescricaoById(3L));
+		assertEquals("Naturalizado", NacionalidadeValues.getDescricaoById(4L));
+		assertEquals("Português com Residência Permanente", NacionalidadeValues.getDescricaoById(5L));
+		assertEquals("Estrangeiro com Domicílio no Exterior", NacionalidadeValues.getDescricaoById(6L));
+		
+		assertNotEquals("N/A", NacionalidadeValues.getDescricaoById(9L));
 	}	
 	
 	@Test
 	public void testGetDescricaoByIdByte() {
-		assertEquals("Brasileiro",NacionalidadeValues.getDescricaoById((byte) 1));
-		assertEquals("Estrangeiro com Visto Permanente",NacionalidadeValues.getDescricaoById((byte) 2));
-		assertEquals("Estrangeiro com Visto Temporário",NacionalidadeValues.getDescricaoById((byte) 3));
-		assertEquals("Naturalizado",NacionalidadeValues.getDescricaoById((byte) 4));
-		assertEquals("Português com Residência Permanente",NacionalidadeValues.getDescricaoById((byte) 5));
-		assertEquals("Estrangeiro com Domicílio no Exterior",NacionalidadeValues.getDescricaoById((byte) 6));
+		assertEquals("Brasileiro", NacionalidadeValues.getDescricaoById((byte) 1));
+		assertEquals("Estrangeiro com Visto Permanente", NacionalidadeValues.getDescricaoById((byte) 2));
+		assertEquals("Estrangeiro com Visto Temporário", NacionalidadeValues.getDescricaoById((byte) 3));
+		assertEquals("Naturalizado", NacionalidadeValues.getDescricaoById((byte) 4));
+		assertEquals("Português com Residência Permanente", NacionalidadeValues.getDescricaoById((byte) 5));
+		assertEquals("Estrangeiro com Domicílio no Exterior", NacionalidadeValues.getDescricaoById((byte) 6));
+		
+		assertNotEquals("N/A", NacionalidadeValues.getDescricaoById((byte) 9));
 	}
 
 	@Test
@@ -78,6 +87,8 @@ public class NacionalidadeValuesTest {
 		assertEquals(NacionalidadeValues.NATURALIZADO,NacionalidadeValues.parse(4));
 		assertEquals(NacionalidadeValues.PORTUGUES_COM_RESIDENCIA_PERMANENTE,NacionalidadeValues.parse(5));
 		assertEquals(NacionalidadeValues.ESTRANGEIRO_DOMICILIO_EXTERIOR,NacionalidadeValues.parse(6));
+		
+		assertNotEquals(NacionalidadeValues.ESTRANGEIRO_DOMICILIO_EXTERIOR,NacionalidadeValues.parse(9));
 	}	
 	
 }
