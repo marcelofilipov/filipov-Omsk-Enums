@@ -1,6 +1,7 @@
 package br.filipov.values.b;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -32,66 +33,74 @@ public class BandeiraCartaoValuesTest {
 		assertEquals(BandeiraCartaoValues.BNDES, EnumHelper.getEnumPorCodigo(8, BandeiraCartaoValues.class));
 	}	
 
-
-
 	@Test
 	public void testGetDescricaoByIdShort() {
-		assertEquals("Visa",BandeiraCartaoValues.getDescricaoById((short) 1));
-		assertEquals("MasterCard",BandeiraCartaoValues.getDescricaoById((short) 2));
-		assertEquals("American Express",BandeiraCartaoValues.getDescricaoById((short) 3));
-		assertEquals("Aura",BandeiraCartaoValues.getDescricaoById((short) 4));
-		assertEquals("Elo",BandeiraCartaoValues.getDescricaoById((short) 5));
-		assertEquals("Hipercard",BandeiraCartaoValues.getDescricaoById((short) 6));
-		assertEquals("Sorocred",BandeiraCartaoValues.getDescricaoById((short) 7));
-		assertEquals("BNDES",BandeiraCartaoValues.getDescricaoById((short) 8));
+		assertEquals("Visa", BandeiraCartaoValues.getDescricaoById((short) 1));
+		assertEquals("MasterCard", BandeiraCartaoValues.getDescricaoById((short) 2));
+		assertEquals("American Express", BandeiraCartaoValues.getDescricaoById((short) 3));
+		assertEquals("Aura", BandeiraCartaoValues.getDescricaoById((short) 4));
+		assertEquals("Elo", BandeiraCartaoValues.getDescricaoById((short) 5));
+		assertEquals("Hipercard", BandeiraCartaoValues.getDescricaoById((short) 6));
+		assertEquals("Sorocred", BandeiraCartaoValues.getDescricaoById((short) 7));
+		assertEquals("BNDES", BandeiraCartaoValues.getDescricaoById((short) 8));
+		
+		assertNotEquals("N/A", BandeiraCartaoValues.getDescricaoById((short) 9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdInteger() {
-		assertEquals("Visa",BandeiraCartaoValues.getDescricaoById(1));
-		assertEquals("MasterCard",BandeiraCartaoValues.getDescricaoById(2));
-		assertEquals("American Express",BandeiraCartaoValues.getDescricaoById(3));
-		assertEquals("Aura",BandeiraCartaoValues.getDescricaoById(4));
-		assertEquals("Elo",BandeiraCartaoValues.getDescricaoById(5));
-		assertEquals("Hipercard",BandeiraCartaoValues.getDescricaoById(6));
-		assertEquals("Sorocred",BandeiraCartaoValues.getDescricaoById(7));
-		assertEquals("BNDES",BandeiraCartaoValues.getDescricaoById(8));
+		assertEquals("Visa", BandeiraCartaoValues.getDescricaoById(1));
+		assertEquals("MasterCard", BandeiraCartaoValues.getDescricaoById(2));
+		assertEquals("American Express", BandeiraCartaoValues.getDescricaoById(3));
+		assertEquals("Aura", BandeiraCartaoValues.getDescricaoById(4));
+		assertEquals("Elo", BandeiraCartaoValues.getDescricaoById(5));
+		assertEquals("Hipercard", BandeiraCartaoValues.getDescricaoById(6));
+		assertEquals("Sorocred", BandeiraCartaoValues.getDescricaoById(7));
+		assertEquals("BNDES", BandeiraCartaoValues.getDescricaoById(8));
+		
+		assertNotEquals("N/A", BandeiraCartaoValues.getDescricaoById(9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdLong() {
-		assertEquals("Visa",BandeiraCartaoValues.getDescricaoById(1L));
-		assertEquals("MasterCard",BandeiraCartaoValues.getDescricaoById(2L));
-		assertEquals("American Express",BandeiraCartaoValues.getDescricaoById(3L));
-		assertEquals("Aura",BandeiraCartaoValues.getDescricaoById(4L));
-		assertEquals("Elo",BandeiraCartaoValues.getDescricaoById(5L));
-		assertEquals("Hipercard",BandeiraCartaoValues.getDescricaoById(6L));
-		assertEquals("Sorocred",BandeiraCartaoValues.getDescricaoById(7L));
-		assertEquals("BNDES",BandeiraCartaoValues.getDescricaoById(8L));
+		assertEquals("Visa", BandeiraCartaoValues.getDescricaoById(1L));
+		assertEquals("MasterCard", BandeiraCartaoValues.getDescricaoById(2L));
+		assertEquals("American Express", BandeiraCartaoValues.getDescricaoById(3L));
+		assertEquals("Aura", BandeiraCartaoValues.getDescricaoById(4L));
+		assertEquals("Elo", BandeiraCartaoValues.getDescricaoById(5L));
+		assertEquals("Hipercard", BandeiraCartaoValues.getDescricaoById(6L));
+		assertEquals("Sorocred", BandeiraCartaoValues.getDescricaoById(7L));
+		assertEquals("BNDES", BandeiraCartaoValues.getDescricaoById(8L));
+		
+		assertNotEquals("N/A", BandeiraCartaoValues.getDescricaoById(9L));
 	}	
 	
 	@Test
 	public void testGetDescricaoByIdByte() {
-		assertEquals("Visa",BandeiraCartaoValues.getDescricaoById((byte) 1));
-		assertEquals("MasterCard",BandeiraCartaoValues.getDescricaoById((byte) 2));
-		assertEquals("American Express",BandeiraCartaoValues.getDescricaoById((byte) 3));
-		assertEquals("Aura",BandeiraCartaoValues.getDescricaoById((byte) 4));
-		assertEquals("Elo",BandeiraCartaoValues.getDescricaoById((byte) 5));
-		assertEquals("Hipercard",BandeiraCartaoValues.getDescricaoById((byte) 6));
-		assertEquals("Sorocred",BandeiraCartaoValues.getDescricaoById((byte) 7));
-		assertEquals("BNDES",BandeiraCartaoValues.getDescricaoById((byte) 8));
+		assertEquals("Visa", BandeiraCartaoValues.getDescricaoById((byte) 1));
+		assertEquals("MasterCard", BandeiraCartaoValues.getDescricaoById((byte) 2));
+		assertEquals("American Express", BandeiraCartaoValues.getDescricaoById((byte) 3));
+		assertEquals("Aura", BandeiraCartaoValues.getDescricaoById((byte) 4));
+		assertEquals("Elo", BandeiraCartaoValues.getDescricaoById((byte) 5));
+		assertEquals("Hipercard", BandeiraCartaoValues.getDescricaoById((byte) 6));
+		assertEquals("Sorocred", BandeiraCartaoValues.getDescricaoById((byte) 7));
+		assertEquals("BNDES", BandeiraCartaoValues.getDescricaoById((byte) 8));
+		
+		assertNotEquals("N/A", BandeiraCartaoValues.getDescricaoById((byte) 9));
 	}
 
 	@Test
 	public void testParse() {
-		assertEquals(BandeiraCartaoValues.VISA,BandeiraCartaoValues.parse(1));
-		assertEquals(BandeiraCartaoValues.MASTERCARD,BandeiraCartaoValues.parse(2));
-		assertEquals(BandeiraCartaoValues.AMERICAN_EXPRESS,BandeiraCartaoValues.parse(3));
-		assertEquals(BandeiraCartaoValues.AURA,BandeiraCartaoValues.parse(4));
-		assertEquals(BandeiraCartaoValues.ELO,BandeiraCartaoValues.parse(5));
-		assertEquals(BandeiraCartaoValues.HIPERCARD,BandeiraCartaoValues.parse(6));
-		assertEquals(BandeiraCartaoValues.SOROCRED,BandeiraCartaoValues.parse(7));
-		assertEquals(BandeiraCartaoValues.BNDES,BandeiraCartaoValues.parse(8));
+		assertEquals(BandeiraCartaoValues.VISA, BandeiraCartaoValues.parse(1));
+		assertEquals(BandeiraCartaoValues.MASTERCARD, BandeiraCartaoValues.parse(2));
+		assertEquals(BandeiraCartaoValues.AMERICAN_EXPRESS, BandeiraCartaoValues.parse(3));
+		assertEquals(BandeiraCartaoValues.AURA, BandeiraCartaoValues.parse(4));
+		assertEquals(BandeiraCartaoValues.ELO, BandeiraCartaoValues.parse(5));
+		assertEquals(BandeiraCartaoValues.HIPERCARD, BandeiraCartaoValues.parse(6));
+		assertEquals(BandeiraCartaoValues.SOROCRED, BandeiraCartaoValues.parse(7));
+		assertEquals(BandeiraCartaoValues.BNDES, BandeiraCartaoValues.parse(8));
+		
+		assertNotEquals(BandeiraCartaoValues.BNDES, BandeiraCartaoValues.parse(9));
 	}	
 	
 }

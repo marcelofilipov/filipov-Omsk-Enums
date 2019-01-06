@@ -55,10 +55,10 @@ public class AtivoInativoValuesTest {
 
 	@Test
 	public void testParse() {
-		assertEquals(AtivoInativoValues.ATIVO,AtivoInativoValues.parse(1));
-		assertEquals(AtivoInativoValues.INATIVO,AtivoInativoValues.parse(0));
+		assertEquals(AtivoInativoValues.ATIVO, AtivoInativoValues.parse(1));
+		assertEquals(AtivoInativoValues.INATIVO, AtivoInativoValues.parse(0));
 		
-		assertNotEquals(AtivoInativoValues.INATIVO,AtivoInativoValues.parse(9));
+		assertNotEquals(AtivoInativoValues.INATIVO, AtivoInativoValues.parse(9));
 	}	
 	
 }

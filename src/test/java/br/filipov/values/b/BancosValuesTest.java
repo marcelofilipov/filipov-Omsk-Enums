@@ -1,6 +1,7 @@
 package br.filipov.values.b;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -21,35 +22,41 @@ public class BancosValuesTest {
 		assertEquals(BancosValues.CEF, EnumHelper.getEnumPorCodigo(151, BancosValues.class));
 		assertEquals(BancosValues.ITAU_UNIBANCO, EnumHelper.getEnumPorCodigo(341, BancosValues.class));
 	}
-
-
 	
 	@Test
 	public void testGetDescricaoByIdShort() {
-		assertEquals("Bradesco",BancosValues.getDescricaoById((short) 237));
-		assertEquals("Caixa Econômica Federal",BancosValues.getDescricaoById((short) 151));
-		assertEquals("Itaú Unibanco",BancosValues.getDescricaoById((short) 341));
+		assertEquals("Bradesco", BancosValues.getDescricaoById((short) 237));
+		assertEquals("Caixa Econômica Federal", BancosValues.getDescricaoById((short) 151));
+		assertEquals("Itaú Unibanco", BancosValues.getDescricaoById((short) 341));
+		
+		assertNotEquals("N/A", BancosValues.getDescricaoById((short) 999));
 	}
 
 	@Test
 	public void testGetDescricaoByIdInteger() {
-		assertEquals("Bradesco",BancosValues.getDescricaoById(237));
-		assertEquals("Caixa Econômica Federal",BancosValues.getDescricaoById(151));
-		assertEquals("Itaú Unibanco",BancosValues.getDescricaoById(341));
+		assertEquals("Bradesco", BancosValues.getDescricaoById(237));
+		assertEquals("Caixa Econômica Federal", BancosValues.getDescricaoById(151));
+		assertEquals("Itaú Unibanco", BancosValues.getDescricaoById(341));
+		
+		assertNotEquals("N/A", BancosValues.getDescricaoById(999));
 	}
 
 	@Test
 	public void testGetDescricaoByIdLong() {
-		assertEquals("Bradesco",BancosValues.getDescricaoById(237L));
-		assertEquals("Caixa Econômica Federal",BancosValues.getDescricaoById(151L));
-		assertEquals("Itaú Unibanco",BancosValues.getDescricaoById(341L));
+		assertEquals("Bradesco", BancosValues.getDescricaoById(237L));
+		assertEquals("Caixa Econômica Federal", BancosValues.getDescricaoById(151L));
+		assertEquals("Itaú Unibanco", BancosValues.getDescricaoById(341L));
+		
+		assertNotEquals("N/A", BancosValues.getDescricaoById(999L));
 	}	
 
 	@Test
 	public void testParse() {
-		assertEquals(BancosValues.BRADESCO,BancosValues.parse(237));
-		assertEquals(BancosValues.CEF,BancosValues.parse(151));
-		assertEquals(BancosValues.ITAU_UNIBANCO,BancosValues.parse(341));
+		assertEquals(BancosValues.BRADESCO, BancosValues.parse(237));
+		assertEquals(BancosValues.CEF, BancosValues.parse(151));
+		assertEquals(BancosValues.ITAU_UNIBANCO, BancosValues.parse(341));
+		
+		assertNotEquals(BancosValues.ITAU_UNIBANCO, BancosValues.parse(999));
 	}	
 		
 }
