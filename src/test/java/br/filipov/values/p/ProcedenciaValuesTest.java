@@ -1,6 +1,7 @@
 package br.filipov.values.p;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -19,37 +20,45 @@ public class ProcedenciaValuesTest {
 		assertEquals(ProcedenciaValues.NACIONAL, EnumHelper.getEnumPorCodigo(1, ProcedenciaValues.class));
 		assertEquals(ProcedenciaValues.INTERNACIONAL, EnumHelper.getEnumPorCodigo(2, ProcedenciaValues.class));
 	}	
-
-	
 	
 	@Test
 	public void testGetDescricaoByIdShort() {
-		assertEquals("Nacional",ProcedenciaValues.getDescricaoById((short) 1));
-		assertEquals("Internacional",ProcedenciaValues.getDescricaoById((short) 2));
+		assertEquals("Nacional", ProcedenciaValues.getDescricaoById((short) 1));
+		assertEquals("Internacional", ProcedenciaValues.getDescricaoById((short) 2));
+		
+		assertNotEquals("N/A", ProcedenciaValues.getDescricaoById((short) 9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdInteger() {
-		assertEquals("Nacional",ProcedenciaValues.getDescricaoById(1));
-		assertEquals("Internacional",ProcedenciaValues.getDescricaoById(2));
+		assertEquals("Nacional", ProcedenciaValues.getDescricaoById(1));
+		assertEquals("Internacional", ProcedenciaValues.getDescricaoById(2));
+		
+		assertNotEquals("N/A", ProcedenciaValues.getDescricaoById(9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdLong() {
-		assertEquals("Nacional",ProcedenciaValues.getDescricaoById(1L));
-		assertEquals("Internacional",ProcedenciaValues.getDescricaoById(2L));
+		assertEquals("Nacional", ProcedenciaValues.getDescricaoById(1L));
+		assertEquals("Internacional", ProcedenciaValues.getDescricaoById(2L));
+		
+		assertNotEquals("N/A", ProcedenciaValues.getDescricaoById(9L));
 	}	
 	
 	@Test
 	public void testGetDescricaoByIdByte() {
-		assertEquals("Nacional",ProcedenciaValues.getDescricaoById((byte) 1));
-		assertEquals("Internacional",ProcedenciaValues.getDescricaoById((byte) 2));
+		assertEquals("Nacional", ProcedenciaValues.getDescricaoById((byte) 1));
+		assertEquals("Internacional", ProcedenciaValues.getDescricaoById((byte) 2));
+		
+		assertNotEquals("N/A", ProcedenciaValues.getDescricaoById((byte) 9));
 	}
 
 	@Test
 	public void testParse() {
-		assertEquals(ProcedenciaValues.NACIONAL,ProcedenciaValues.parse(1));
-		assertEquals(ProcedenciaValues.INTERNACIONAL,ProcedenciaValues.parse(2));
+		assertEquals(ProcedenciaValues.NACIONAL, ProcedenciaValues.parse(1));
+		assertEquals(ProcedenciaValues.INTERNACIONAL, ProcedenciaValues.parse(2));
+		
+		assertNotEquals(ProcedenciaValues.INTERNACIONAL, ProcedenciaValues.parse(9));
 	}	
 	
 }
