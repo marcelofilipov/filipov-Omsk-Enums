@@ -1,6 +1,7 @@
 package br.filipov.values.i;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -19,37 +20,45 @@ public class IntervaloComparacaoValuesTest {
 		assertEquals(IntervaloComparacaoValues.FORA, EnumHelper.getEnumPorCodigo(0, IntervaloComparacaoValues.class));
 		assertEquals(IntervaloComparacaoValues.DENTRO, EnumHelper.getEnumPorCodigo(1, IntervaloComparacaoValues.class));
 	}	
-
-	
 	
 	@Test
 	public void testGetDescricaoByIdShort() {
-		assertEquals("Fora",IntervaloComparacaoValues.getDescricaoById((short) 0));
-		assertEquals("Dentro",IntervaloComparacaoValues.getDescricaoById((short) 1));
+		assertEquals("Fora", IntervaloComparacaoValues.getDescricaoById((short) 0));
+		assertEquals("Dentro", IntervaloComparacaoValues.getDescricaoById((short) 1));
+		
+		assertNotEquals("N/A", IntervaloComparacaoValues.getDescricaoById((short) 9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdInteger() {
-		assertEquals("Fora",IntervaloComparacaoValues.getDescricaoById(0));
-		assertEquals("Dentro",IntervaloComparacaoValues.getDescricaoById(1));
+		assertEquals("Fora", IntervaloComparacaoValues.getDescricaoById(0));
+		assertEquals("Dentro", IntervaloComparacaoValues.getDescricaoById(1));
+		
+		assertNotEquals("N/A", IntervaloComparacaoValues.getDescricaoById(9));
 	}
 
 	@Test
 	public void testGetDescricaoByIdLong() {
-		assertEquals("Fora",IntervaloComparacaoValues.getDescricaoById(0L));
-		assertEquals("Dentro",IntervaloComparacaoValues.getDescricaoById(1L));
+		assertEquals("Fora", IntervaloComparacaoValues.getDescricaoById(0L));
+		assertEquals("Dentro", IntervaloComparacaoValues.getDescricaoById(1L));
+		
+		assertNotEquals("N/A", IntervaloComparacaoValues.getDescricaoById(9L));
 	}	
 	
 	@Test
 	public void testGetDescricaoByIdByte() {
-		assertEquals("Fora",IntervaloComparacaoValues.getDescricaoById((byte) 0));
-		assertEquals("Dentro",IntervaloComparacaoValues.getDescricaoById((byte) 1));
+		assertEquals("Fora", IntervaloComparacaoValues.getDescricaoById((byte) 0));
+		assertEquals("Dentro", IntervaloComparacaoValues.getDescricaoById((byte) 1));
+		
+		assertNotEquals("N/A", IntervaloComparacaoValues.getDescricaoById((byte) 9));
 	}
 
 	@Test
 	public void testParse() {
-		assertEquals(IntervaloComparacaoValues.DENTRO,IntervaloComparacaoValues.parse(1));
-		assertEquals(IntervaloComparacaoValues.FORA,IntervaloComparacaoValues.parse(0));
+		assertEquals(IntervaloComparacaoValues.DENTRO, IntervaloComparacaoValues.parse(1));
+		assertEquals(IntervaloComparacaoValues.FORA, IntervaloComparacaoValues.parse(0));
+		
+		assertNotEquals(IntervaloComparacaoValues.FORA, IntervaloComparacaoValues.parse(9));
 	}
 		
 }
