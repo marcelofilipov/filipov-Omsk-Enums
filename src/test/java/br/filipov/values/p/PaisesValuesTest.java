@@ -248,6 +248,8 @@ public class PaisesValuesTest {
 		assertEquals("Zâmbia", PaisesValues.getDescricaoById((short) 193));
 		assertEquals("Zimbabwe", PaisesValues.getDescricaoById((short) 195));
 		assertEquals("Zona do Canal do Panamá", PaisesValues.getDescricaoById((short) 149));
+		
+		assertNotEquals("N/A", PaisesValues.getDescricaoById((short) 999));
 	}
 	
 	@Test

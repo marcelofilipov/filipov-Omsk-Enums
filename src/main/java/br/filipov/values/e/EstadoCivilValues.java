@@ -1,6 +1,6 @@
 package br.filipov.values.e;
 
-import br.filipov.constants.Constants;
+import br.filipov.utils.Constants;
 
 /**
  * @author Marcelo Aparecido Filipov
@@ -9,15 +9,15 @@ import br.filipov.constants.Constants;
 public enum EstadoCivilValues {
 	
 	SOLTEIRO(1, "Solteiro"),
-    CASADO_COMUNHAO_UNIVERSAL(2, Constants.CASADO + " - Comunhão Universal"),
-    CASADO_COMUNHAO_PARCIAL(3, Constants.CASADO + " - Comunhão Parcial"),
-    CASADO_SEPARACAO_DE_BENS(4, Constants.CASADO + " - Separação de Bens"),
-    VIUVO(5, "Viúvo"),
-    SEPARADO_JUDICIALMENTE(6, "Separado Judicialmente"),
-    DIVORCIADO(7, "Divorciado"),
-    CASADO_REGIME_DOTAL(8, Constants.CASADO + " - Regime Dotal"),
-    CASADO_REGIME_MISTO(9, Constants.CASADO + " - Regime Misto ou Especial"),
-    CASADO_PART_FINAL_AQUESTOS(11, Constants.CASADO + " - Part. Final Aquestos");
+	CASADO_COMUNHAO_UNIVERSAL(2, Constants.CASADO + " - Comunhão Universal"),
+	CASADO_COMUNHAO_PARCIAL(3, Constants.CASADO + " - Comunhão Parcial"),
+	CASADO_SEPARACAO_DE_BENS(4, Constants.CASADO + " - Separação de Bens"),
+	VIUVO(5, "Viúvo"),
+	SEPARADO_JUDICIALMENTE(6, "Separado Judicialmente"),
+	DIVORCIADO(7, "Divorciado"),
+	CASADO_REGIME_DOTAL(8, Constants.CASADO + " - Regime Dotal"),
+	CASADO_REGIME_MISTO(9, Constants.CASADO + " - Regime Misto ou Especial"),
+	CASADO_PART_FINAL_AQUESTOS(11, Constants.CASADO + " - Part. Final Aquestos");
 	
 	private Integer codigo;
 	private String descricao;
