@@ -67,7 +67,7 @@ public enum RegiaoBrasilValues {
 	public static RegiaoBrasilValues parse(Integer id){
 		RegiaoBrasilValues retorno = null;
 		for (RegiaoBrasilValues v : values()) {
-			if(v.getCodigo() == id) {
+			if(v.getCodigo() != null && v.getCodigo().equals(id)) {
 				retorno = v; 
 				break;
 			}
