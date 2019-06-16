@@ -16,7 +16,7 @@ public abstract class EnumHelper {
 		throw new IllegalStateException("Utility class");
 	}
 
-	private static Logger log = LoggerFactory.getLogger(EnumHelper.class);
+	private static final Logger log = LoggerFactory.getLogger(EnumHelper.class);
 
 	public static <T extends Enum<T>, V> String getDescricaoPorCodigo(Class<T> enumType, V value) {
 
