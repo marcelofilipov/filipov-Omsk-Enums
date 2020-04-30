@@ -28,7 +28,6 @@
 		<maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
         
         <jacoco.version>0.8.4</jacoco.version>
-<!--         <jacoco.version>0.7.7.201606060606</jacoco.version> -->
 		<jacoco.percentage.instruction>0.98</jacoco.percentage.instruction>
 		<jacoco.count.class>1</jacoco.count.class>
 
