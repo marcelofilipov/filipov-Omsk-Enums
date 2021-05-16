@@ -1,9 +1,8 @@
 package br.filipov.values.a;
 
-/**
- * @author Marcelo Aparecido Filipov
- * @since 2014
- */
+import java.util.Optional;
+import java.util.stream.Stream;
+
 public enum AtivoInativoValues {
 
 	ATIVO(1, "Ativo"), INATIVO(0, "Inativo");
@@ -16,59 +15,53 @@ public enum AtivoInativoValues {
 		this.descricao = descricao;
 	}
 
-	public static String getDescricaoById(byte id) {
-		String descricao = null;
-		for (AtivoInativoValues v : values()) {
-			if (v.getCodigo() == id) {
-				descricao = v.getDescricao();
-				break;
-			}
-		}
-		return descricao;
+	public static Stream<AtivoInativoValues> stream() {
+		return Stream.of(AtivoInativoValues.values());
 	}
 
-	public static String getDescricaoById(short id) {
-		String descricao = null;
-		for (AtivoInativoValues v : values()) {
-			if (v.getCodigo() == id) {
-				descricao = v.getDescricao();
-				break;
-			}
-		}
-		return descricao;
+	public static Optional<String> getDescricaoById(byte id) {
+
+		final String descricao = AtivoInativoValues.stream()
+				.filter(a -> a.getCodigo() == id)
+				.findFirst().get().getDescricao();
+				
+		return Optional.ofNullable(descricao);
 	}
 
-	public static String getDescricaoById(int id) {
-		String descricao = null;
-		for (AtivoInativoValues v : values()) {
-			if (v.getCodigo() == id) {
-				descricao = v.getDescricao();
-				break;
-			}
-		}
-		return descricao;
+	public static Optional<String> getDescricaoById(short id) {
+
+		final String descricao = AtivoInativoValues.stream()
+				.filter(a -> a.getCodigo() == id)
+				.findFirst().get().getDescricao();
+					
+		return Optional.ofNullable(descricao);
 	}
 
-	public static String getDescricaoById(long id) {
-		String descricao = null;
-		for (AtivoInativoValues v : values()) {
-			if (v.getCodigo() == id) {
-				descricao = v.getDescricao();
-				break;
-			}
-		}
-		return descricao;
+	public static Optional<String> getDescricaoById(int id) {
+
+		final String descricao = AtivoInativoValues.stream()
+				.filter(a -> a.getCodigo() == id)
+				.findFirst().get().getDescricao();
+
+		return Optional.ofNullable(descricao);
 	}
 
-	public static AtivoInativoValues parse(int id) {
-		AtivoInativoValues retorno = null;
-		for (AtivoInativoValues v : values()) {
-			if (v.getCodigo() == id) {
-				retorno = v;
-				break;
-			}
-		}
-		return retorno;
+	public static Optional<String> getDescricaoById(long id) {
+
+		final String descricao = AtivoInativoValues.stream()
+				.filter(a -> a.getCodigo() == id)
+				.findFirst().get().getDescricao();
+
+		return Optional.ofNullable(descricao);
+	}
+
+	public static Optional<AtivoInativoValues> parse(int id) {
+		
+		final AtivoInativoValues retorno = AtivoInativoValues.stream()
+				.filter(a -> a.getCodigo() == id)
+				.findFirst().get();
+
+		return Optional.ofNullable(retorno);
 	}
 
 	public Integer getCodigo() {
