@@ -32,6 +32,15 @@ target/
 # Eclipse Core
 .project
 .settings/
+.metadata
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+.recommenders
 
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
